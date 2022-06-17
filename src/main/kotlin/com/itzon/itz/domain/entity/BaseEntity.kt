@@ -5,13 +5,15 @@ import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedBy
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.LocalDateTime
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.MappedSuperclass
+import javax.persistence.*
 
 
 @Entity
 class BaseEntity (
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null,
+
     @CreatedDate
     @Column(nullable = false)
     val createDateTime: LocalDateTime = LocalDateTime.now(),
@@ -27,5 +29,5 @@ class BaseEntity (
     @LastModifiedBy
     @Column(nullable = false)
     val modifedId: String
-): SampleEntity()
+)
 
