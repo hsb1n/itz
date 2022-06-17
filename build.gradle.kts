@@ -7,6 +7,17 @@ plugins {
     kotlin("plugin.spring") version "1.6.21"
     kotlin("plugin.jpa") version "1.6.21"
 }
+    // 코틀린의 클래스는 기본적으로 final 로 이루어져 있기 때문에 allOpen 플러그인을 추가하지 않으면 프록시를 만들 수 없음 (지역로딩 불가)
+    // allOpen 이 없으면 컴파일러 에러나 런타임에러가 발생하지는 않는데 성능에 문제가 생김
+    // 스프링 이니셜라이저가 붙여주지 않으므로 개발자가 의식적으로 붙여줘야함
+    allOpen {
+        annotation("javax.persistence.Entity")
+        annotation("javax.persistence.MappedSuperclass")
+    }
+
+    noArg{
+        annotation("javax.persistence.Entity")
+    }
 
 group = "com.itzon"
 version = "0.0.1-SNAPSHOT"

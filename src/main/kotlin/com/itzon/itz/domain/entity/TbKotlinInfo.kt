@@ -9,13 +9,13 @@ class TbKotlinInfo  (
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column("KOTLIN_ID", length = 20)
+    @Column(name = "KOTLIN_ID", length = 20)
     var kotlinId : Long,
 
-    @Column("KOTLIN_NAME", length = 50)
+    @Column(name = "KOTLIN_NAME", length = 50)
     var kotlinNm : String? = null,
 
-    @Column("AUTH_ID", length = 20, nullable = false)
+    @Column(name = "AUTH_ID", length = 20, nullable = false)
     var authId : String
 
  )
