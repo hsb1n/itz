@@ -27,6 +27,7 @@ abstract class SampleEntity  (
     }
 }
 
+@MappedSuperclass
 abstract class SampleRootEntity<T : AbstractAggregateRoot<T>>(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
