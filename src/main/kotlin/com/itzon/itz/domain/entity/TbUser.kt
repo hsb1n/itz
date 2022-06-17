@@ -6,7 +6,6 @@ import javax.persistence.Column
 import javax.persistence.Embedded
 import javax.persistence.Entity
 
-@Entity
 class TbUser (
     @Embedded
     var information: UserInfo,
