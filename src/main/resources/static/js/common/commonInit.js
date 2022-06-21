@@ -5,6 +5,7 @@ var commonInit = {
         };
         common.loadPage("/system/menu/manage");
 
+
     }
 }
 
