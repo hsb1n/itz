@@ -38,7 +38,7 @@ class TMenuInfo (
 
     @Column(name = "ord_no", length = 1)
     var ordNo: Int,
-) : BaseEntity()
+)
 {
     class Builder{
         private lateinit var menuId : String

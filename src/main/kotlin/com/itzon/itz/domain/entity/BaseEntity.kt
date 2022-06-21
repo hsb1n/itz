@@ -13,7 +13,6 @@ import javax.persistence.MappedSuperclass
 
 
 @MappedSuperclass
-@EntityListeners(value = [AuditingEntityListener::class])
 abstract class BaseEntity (
     @CreatedDate
     @Column(nullable = false)
@@ -22,13 +21,13 @@ abstract class BaseEntity (
     @LastModifiedDate
     @Column(nullable = false)
     var modifiedDateTime: LocalDateTime = LocalDateTime.now(),
-/*
+
     @CreatedBy
     @Column(nullable = false)
     val createId: String,
 
     @LastModifiedBy
     @Column(nullable = false)
-    val modifedId: String*/
+    val modifedId: String
 )
 
